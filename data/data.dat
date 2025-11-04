@@ -1,0 +1,13 @@
+type
+  TRegistro = Record
+    id   : Byte;  { id de la estación   }
+    te   : Byte;  { temperatura         }
+    hr   : Byte;  { humedad del aire    }
+    mp01 : Word;  { Mate.Parti. 01 um   }
+    mp25 : Word;  { Mate.Parti. 2.5 um  }
+    mp10 : Word;  { Mate.Parti. 10 um   }
+    h01  : Word;  { Histo Particula 1.0 }
+    h25  : Word;  { Histo Particula 2.5 }
+    h50  : Word;  { Histo Particula 5.0 }
+    h10  : Word;  { Histo Particula 10  }
+  end;
