@@ -1,4 +1,4 @@
-# S.I_Proyecto_2
+q# S.I_Proyecto_2
 
 Este repositorio contiene la estructura inicial para un proyecto IoT/DataLogger donde un
 ESP32 generó un archivo `data.dat` con registros de 10 estaciones ambientales. El objetivo
