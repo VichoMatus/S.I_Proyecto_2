@@ -9,9 +9,9 @@
         <Filename Value="server_main.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ServerMain"/>
-        <TopLine Value="20"/>
-        <CursorPos X="105" Y="33"/>
-        <UsageCount Value="20"/>
+        <TopLine Value="234"/>
+        <CursorPos X="31" Y="236"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -31,7 +31,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="21"/>
       </Unit>
       <Unit>
         <Filename Value="src\domain\repositories.pas"/>
@@ -41,7 +41,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="21"/>
       </Unit>
       <Unit>
         <Filename Value="src\infrastructure\database\db_config.pas"/>
@@ -100,7 +100,6 @@
       <Unit>
         <Filename Value="src\infrastructure\database\SQLiteRepository.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <TopLine Value="249"/>
         <CursorPos X="92" Y="261"/>
@@ -110,9 +109,10 @@
       <Unit>
         <Filename Value="src\infrastructure\http\HTTPServerUnit.pas"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="246"/>
-        <CursorPos X="50" Y="253"/>
+        <TopLine Value="167"/>
+        <CursorPos X="86" Y="172"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit>
@@ -126,7 +126,7 @@
         <UsageCount Value="20"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="3">
+    <JumpHistory HistoryIndex="5">
       <Position>
         <Filename Value="server_main.pas"/>
         <Caret Line="2" Column="22"/>
@@ -142,6 +142,14 @@
       <Position>
         <Filename Value="src\infrastructure\http\HTTPServerUnit.pas"/>
         <Caret Line="253" Column="50" TopLine="246"/>
+      </Position>
+      <Position>
+        <Filename Value="src\infrastructure\database\SQLiteRepository.pas"/>
+        <Caret Line="261" Column="92" TopLine="249"/>
+      </Position>
+      <Position>
+        <Filename Value="server_main.pas"/>
+        <Caret Line="236" Column="31" TopLine="229"/>
       </Position>
     </JumpHistory>
     <RunParams>

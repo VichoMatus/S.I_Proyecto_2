@@ -50,9 +50,6 @@ function ObtenerRutaBDRelativa(const ANombreArchivo: string): string;
 
 implementation
 
-uses
-  FileUtil;
-
 { ============================================================================
   Implementación de funciones de configuración predeterminada
   ============================================================================ }
