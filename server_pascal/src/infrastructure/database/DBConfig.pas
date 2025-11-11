@@ -87,6 +87,7 @@ var
   TipoDB: string;
 begin
   FillChar(Result, SizeOf(TDatabaseConfig), 0);
+  TipoDB := '';
   
   if not FileExists(ARutaINI) then
   begin
@@ -98,28 +99,36 @@ begin
   
   INI := TIniFile.Create(ARutaINI);
   try
-    TipoDB := LowerCase(INI.ReadString('Database', 'Type', 'sqlite'));
-    
-    if TipoDB = 'sqlite' then
-    begin
-      Result.TipoDB := 'sqlite';
-      Result.RutaArchivo := INI.ReadString('SQLite', 'FilePath', 
-                                           ObtenerRutaBDRelativa('estaciones.db'));
-      Result.NombreDB := ExtractFileName(Result.RutaArchivo);
-    end
-    else if TipoDB = 'mariadb' then
-    begin
-      Result.TipoDB := 'mariadb';
-      Result.Servidor := INI.ReadString('MariaDB', 'Server', 'localhost');
-      Result.Puerto := INI.ReadInteger('MariaDB', 'Port', 3306);
-      Result.NombreDB := INI.ReadString('MariaDB', 'Database', 'estaciones_db');
-      Result.Usuario := INI.ReadString('MariaDB', 'Username', 'root');
-      Result.Contrasena := INI.ReadString('MariaDB', 'Password', '');
-    end
-    else
-    begin
-      WriteLn('Tipo de BD desconocido: ', TipoDB);
-      Result := ObtenerConfigDefaultSQLite;
+    try
+      TipoDB := LowerCase(INI.ReadString('Database', 'Type', 'sqlite'));
+      
+      if TipoDB = 'sqlite' then
+      begin
+        Result.TipoDB := 'sqlite';
+        Result.RutaArchivo := INI.ReadString('SQLite', 'FilePath', 
+                                             ObtenerRutaBDRelativa('estaciones.db'));
+        Result.NombreDB := ExtractFileName(Result.RutaArchivo);
+      end
+      else if TipoDB = 'mariadb' then
+      begin
+        Result.TipoDB := 'mariadb';
+        Result.Servidor := INI.ReadString('MariaDB', 'Server', 'localhost');
+        Result.Puerto := INI.ReadInteger('MariaDB', 'Port', 3306);
+        Result.NombreDB := INI.ReadString('MariaDB', 'Database', 'estaciones_db');
+        Result.Usuario := INI.ReadString('MariaDB', 'Username', 'root');
+        Result.Contrasena := INI.ReadString('MariaDB', 'Password', '');
+      end
+      else
+      begin
+        WriteLn('Tipo de BD desconocido: ', TipoDB);
+        Result := ObtenerConfigDefaultSQLite;
+      end;
+    except
+      on E: Exception do
+      begin
+        WriteLn('Error leyendo INI: ', E.Message);
+        Result := ObtenerConfigDefaultSQLite;
+      end;
     end;
   finally
     INI.Free;

@@ -250,7 +250,7 @@ end;
 
 function TSQLiteRegistroRepository.ObtenerTodos: TRegistroArray;
 var
-  Lista: array of TRegistro;
+  Lista: TRegistroArray;
   Count: Integer;
 begin
   SetLength(Lista, 0);
@@ -278,7 +278,7 @@ end;
 
 function TSQLiteRegistroRepository.ObtenerPorEstacion(AEstacionId: Byte): TRegistroArray;
 var
-  Lista: array of TRegistro;
+  Lista: TRegistroArray;
   Count: Integer;
 begin
   SetLength(Lista, 0);
